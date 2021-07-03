@@ -1,0 +1,65 @@
+{
+  "jasperReport": {
+    "source": "report",
+    "sourceDef": "",
+    "isTable": false,
+    "def": 0,
+    "containsFrame": "false",
+    "hasChild": true,
+    "attr": {
+      "name": "report._attributes.name"
+    },
+    "child": [
+      {
+        "parameter": {
+          "source": "report.data.userParameter",
+          "isTable": "true",
+          "hasChild": true,
+          "def": "0",
+          "containsFrame": "false",
+          "attr": {
+            "name": "_attributes.name",
+            "class": "_attributes.datatype"
+          }
+        }
+      },
+      {
+        "defaultValueExpression": {
+          "source": "report.data.userParameter",
+          "isTable": true,
+          "hasChild": false,
+          "def": 0,
+          "containsFrame": "false",
+          "attr": { "value": "_attributes.initialValue" }
+        }
+      },
+
+      {
+        "queryString": {
+          "source": "",
+          "sourceDef": "report.data.dataSource.select._cdata",
+          "isTable": false,
+          "def": "<![CDATA[\"#source#\"]]>",
+          "containsFrame": "false",
+          "hasChild": false,
+          "attr": ""
+        }
+      },
+
+      {
+        "field": {
+          "source": "report.data.dataSource.group.dataItem",
+          "sourceDef": "",
+          "isTable": true,
+          "def": 0,
+          "containsFrame": "false",
+          "hasChild": false,
+          "attr": {
+            "name": "_attributes.name",
+            "class": "_attributes.datatype"
+          }
+        }
+      }
+    ]
+  }
+}

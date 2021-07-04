@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~jsoneditor/dist/jsoneditor.min.css";
+
+/*  You can't upload images to stackblitz */
+div.jsoneditor-menu > button {
+  background-image: url("https://jsoneditoronline.org/img/jsoneditor-icons.svg");
+}

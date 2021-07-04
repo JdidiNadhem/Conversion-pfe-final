@@ -1,0 +1,23 @@
+<jasperReport  name="RLETT26_XML" > 
+ <parameter  name="P_CEDIT"  class="character" /> 
+ <parameter  name="P_ROLE"  class="character" /> 
+ <parameter  name="P_V_AMAT"  class="character" /> 
+ <defaultValueExpression  value="RM1" /> 
+ <defaultValueExpression  value=undefined /> 
+ <defaultValueExpression  value="v_amat_met" /> 
+ <queryString > 
+ "SELECT  \r\namancert amancert, \r\namatcert amatcert, \r\namanom amanom, \r\namaprenom amaprenom, \r\namadnaiss amadnaiss, \r\namanaissl amanaissl\r\nFROM &p_v_amat, dossier d\r\nWHERE \r\n         d.licnlic = tlicnlic\r\nAND liccedit2= :P_CEDIT\r\nAND nvl(flg_old_edit,'N') = 'N'\r\nORDER BY amanom"> 
+ </queryString> 
+ <field  name="amancert"  class=undefined /> 
+ <field  name="amatcert"  class="vchar2" /> 
+ <field  name="amanom"  class="vchar2" /> 
+ <field  name="amaprenom"  class="vchar2" /> 
+ <field  name="amadnaiss"  class="date" /> 
+ <field  name="amanaissl"  class="vchar2" /> 
+ <field  name="amancert"  class=undefined /> 
+ <field  name="amatcert"  class="vchar2" /> 
+ <field  name="amanom"  class="vchar2" /> 
+ <field  name="amaprenom"  class="vchar2" /> 
+ <field  name="amadnaiss"  class="date" /> 
+ <field  name="amanaissl"  class="vchar2" /> 
+ </jasperReport>

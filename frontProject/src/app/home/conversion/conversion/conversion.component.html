@@ -1,0 +1,124 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-default" >
+    <div class="container">
+
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <div class="collapse navbar-collapse" id="navbar-default">
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a href="javascript:void(0)">
+                <img src="./assets/img/brand/blue.png">
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul class="navbar-nav ml-lg-auto">
+          <li class="nav-item">
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-icon" href="javascript:void(0)">
+              <!-- <i class="ni ni-notification-70"></i> -->
+              <span class="nav-link-inner--text d-lg-none">Profile</span>
+            </a>
+          </li>
+          <li class="nav-item" ngbDropdown placement="bottom-right">
+            <a class="nav-link nav-link-icon no-caret" id="navbar-default_dropdown_1" ngbDropdownToggle>
+              <!-- <i class="ni ni-settings-gear-65"></i> -->
+              <span class="nav-link-inner--text d-lg-none">Settings</span>
+            </a>
+            <div class="dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript:void(0)"></a>
+              <a class="dropdown-item" href="javascript:void(0)"></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript:void(0)"></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container">
+    <!-- <h3 class="h4 text-success font-weight-bold mb-4">Tabs</h3> -->
+    <div class="row justify-content">
+      <!-- <div class="col-lg-6"> -->
+        <!-- Tabs with icons -->
+        <div class="mb-3">
+          <h3 class="text-uppercase font-weight-bold mb-4">Conversion des fichiers</h3>
+        </div>
+          <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row" type="tabs">
+              <ngb-tab>
+                <ng-template ngbTabTitle>
+                  <i class="ni ni-cloud-upload-96 mr-2"></i> Conversion
+                </ng-template>
+                  <ng-template ngbTabContent>
+                    <p style="color: red;">{{error}}</p>
+                    <p class="description" style="color: white;">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                    <p class="description"  style="color: white;">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+<div class="row justify-content-center" style="margin-top: -25px;">
+                    <div class="col-md-7">
+                    <form [formGroup]="formCompte" (ngSubmit)="onSubmitFile()" class="form-horizontal">
+                    <div class="row justify-content-center">
+                        <div class="form-group">
+                        <div class="file-field input-field">
+                            <div class="btn btn-1 btn-neutral">
+                                <!-- <span style="margin-right: 25px;">Fichier à convertir</span> -->
+                                <input type="file"  (change)="onSelectedFile($event)" formControlName="attachment" placeholder="choisir fichier XML" accept=".xml">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="choisir fichier XML" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-1 btn-info btn-round" ><i class="ni ni-cloud-upload-96 mr-2"></i>Convertir Fichier</button>
+                </div>
+                </form>
+            </div>
+            <!-- <div class="col-md-3">
+            <br/>
+            <p><small class="text-uppercase text-muted font-weight-bold">Afficher Fichier</small></p>
+                <button class="btn btn-1 btn-info btn-round" type="button">Afficher</button>
+            </div> -->
+            <div class="col-md-4">
+                <br/>
+                <p><small class="text-uppercase text-muted font-weight-bold">Télécharger Fichier</small></p>
+                <button class="btn btn-1 btn-info btn-round" (click)="DownloadFile()" type="button"><i class="ni ni-cloud-download-95 mr-2"></i>Télécharger</button>
+                
+            </div>
+
+        </div>
+
+                  </ng-template>
+              </ngb-tab>
+              <!-- <ngb-tab>
+                <ng-template ngbTabTitle>
+                  <i class="ni ni-bell-55 mr-2"></i> Afficher Fichier
+                </ng-template>
+                  <ng-template ngbTabContent>
+                      <p class="description"  style="color: white;">Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                  </ng-template>
+              </ngb-tab>
+              <ngb-tab>
+                <ng-template ngbTabTitle>
+                    <i class="ni ni-calendar-grid-58 mr-2"></i> Télécharger Fichier
+                </ng-template>
+                  <ng-template ngbTabContent>
+                      <p class="description"  style="color: white;">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                  </ng-template>
+              </ngb-tab> -->
+          </ngb-tabset>
+      <!-- </div> -->
+      
+    </div>
+  
+  </div>

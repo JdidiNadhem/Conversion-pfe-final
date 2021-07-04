@@ -81,7 +81,7 @@ function recJSON(analogTmp) {
         jr += "> \n ";
 
         // console.log("key",key)
-        var Child = analogTmp[key]?.child;
+        var Child = analogTmp[key].child;
         Child.forEach((node, i) => {
           //console.log(i ,':',node)
 

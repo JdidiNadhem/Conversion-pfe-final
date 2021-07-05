@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 import { JsonEditorComponent, JsonEditorOptions } from "ang-jsoneditor";
 import { ConfigurationService } from "src/app/services/configuration.service";
+import swal from "sweetalert2";
 import { schema } from "../schema.value";
 
 @Component({
@@ -47,18 +48,18 @@ export class ConfigurationComponent implements OnInit {
     );
   }
   onSubmitJson() {
-    console.log("finalchange===   ", this.editor.get());
     this.chang = this.editor.get();
-    console.log("=========================   ", this.chang);
     this.confService
       .configureAnalogieFile({ configuration: this.chang })
       .subscribe(
         (resconf: any) => {
-          console.log("contenu configure", resconf);
+          swal("", "La configuration s'est fait avec succès", "success");
+
           this.router.navigate(["/configuration"]);
         },
         (error) => {
           console.log(error);
+          swal("", error, "error");
         }
       );
   }

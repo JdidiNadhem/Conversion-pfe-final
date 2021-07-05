@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ConversionService } from "src/app/services/conversion.service";
+import swal from "sweetalert2";
 
 @Component({
   selector: "app-conversion",
@@ -35,10 +36,12 @@ export class ConversionComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.formCompte.invalid) {
+      swal("", "ajouter un fichier xml ", "warning");
       return;
     }
     if (this.attachment.type.toString() !== "text/xml") {
-      this.error = "veuillez importer un fichier xml !";
+      this.error = "Veuillez importer un fichier xml !";
+      swal("", this.error, "error");
 
       return;
     }
@@ -55,26 +58,35 @@ export class ConversionComponent implements OnInit {
             this.error = "";
             console.log("converted file est", resconv);
             localStorage.setItem("fileName", JSON.stringify(resconv.filename));
+            swal("", "Le fichier est ajouté avec succès", "success");
           },
           (error) => {
             console.log(error);
             this.error = error;
+            swal("", this.error, "error");
           }
         );
       },
       (error) => {
         console.log(error);
         this.error = error;
+        swal("", this.error, "error");
       }
     );
   }
   DownloadFile() {
     this.nameFile = JSON.parse(localStorage.getItem("fileName"));
     console.log("fileName file to download", this.nameFile);
-    this.convService.downloadFile(this.nameFile).subscribe((file) => {
-      this.writeContents(file, this.nameFile, "text/jrxml"); // file extension
-      console.log("response file download", file);
-    });
+    this.convService.downloadFile(this.nameFile).subscribe(
+      (file) => {
+        this.writeContents(file, this.nameFile, "text/jrxml"); // file extension
+
+        swal("", "Le fichier est téléchargé avec succès", "success");
+      },
+      (error) => {
+        swal("", error, "error");
+      }
+    );
   }
 
   writeContents(content, fileName, contentType) {

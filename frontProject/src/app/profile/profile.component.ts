@@ -6,6 +6,7 @@ import {
   NgbDate,
   NgbModal,
 } from "@ng-bootstrap/ng-bootstrap";
+import swal from "sweetalert2";
 import { MustMatch } from "../auth/helpers/must-match.validator";
 import { AuthServiceService, UserService } from "../services";
 
@@ -99,7 +100,6 @@ export class ProfileComponent implements OnInit {
             }
           );
 
-          // this.snackBar.open(res.message, 'Dismiss', { duration: 3000 });
           this.router.navigate(["/user-profile"]);
         },
         (error) => {
@@ -144,13 +144,16 @@ export class ProfileComponent implements OnInit {
       )
       .subscribe(
         (res) => {
+          swal("", "Votre mot de passe a été modifié avec succès", "success");
           this.userService.getUserCurrent().subscribe(
             (user) => {
               console.log(user);
               localStorage.setItem("currentUser", JSON.stringify(user["User"]));
               window.location.reload();
             },
-            (error) => {}
+            (error) => {
+              swal("", "error", "error");
+            }
           );
         },
         (error) => {

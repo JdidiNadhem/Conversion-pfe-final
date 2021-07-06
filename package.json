@@ -4,7 +4,9 @@
   "description": "convetire xml vers jrxml",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server"
+    "back": "nodemon server",
+    "front": "cd frontProject && ng serve",
+    "dev": "concurrently \"npm run front\" \"npm run back\""
   },
   "author": "HAYET DACHRAOUI",
   "license": "ISC",

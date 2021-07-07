@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { AuthServiceService } from "src/app/services/auth-service.service";
+import swal from "sweetalert2";
 
 @Component({
   selector: "app-signup",
@@ -47,11 +48,17 @@ export class SignupComponent implements OnInit {
       )
       .subscribe(
         (res) => {
+          swal(
+            "",
+            "votre inscription a été enregistrée avec succès.Merci de se connecter",
+            "success"
+          );
           // this.snackBar.open(res.message, 'Dismiss', { duration: 3000 });
           this.router.navigate(["/login"]);
         },
         (error) => {
           this.error = error;
+          swal("", error, "error");
         }
       );
   }
